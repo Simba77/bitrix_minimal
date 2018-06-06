@@ -1,17 +1,12 @@
 <?
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] | '/local/php_interface/include/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] | '/local/php_interface/include/functions.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/handler.php';
 
-// Автозагрузка классов
-spl_autoload_register('autoload');
-function autoload($name)
-{
-    $file = __DIR__ . DIRECTORY_SEPARATOR . 'include' . DIRECTORY_SEPARATOR . $name . '.php';
-    if (file_exists($file)) {
-        require_once($file);
-    }
-}
+
+$autoload = new \Project\Autoloader;
+$autoload->register();
 
 
 /**
