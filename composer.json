@@ -1,0 +1,19 @@
+{
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-libxml": "*",
+    "ext-iconv": "*",
+    "ext-mbstring": "*",
+    "adbario/php-dot-notation": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Simba\\": "local/lib"
+    },
+    "files": [
+      "local/helpers/config.php",
+      "local/helpers/functions.php"
+    ]
+  }
+}
